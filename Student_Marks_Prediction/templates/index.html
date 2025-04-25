@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                📚 Student Marks Predictor
+            </div>
+            <form method="post">
+                <label for="hours">📖 Enter Study Hours:</label>
+                <input type="text" name="hours" id="hours" placeholder="e.g., 5" required>
+                <button type="submit">🚀 Predict</button>
+            </form>
+            {% if prediction is not none %}
+            <div class="result">
+                🎯 <strong>Predicted Marks:</strong> {{ prediction }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
